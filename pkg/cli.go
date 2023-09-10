@@ -21,6 +21,10 @@ type Cli struct {
 	log        io.Writer
 }
 
+func (Cli*) getAuth() {
+	return Cli.auth
+}
+
 func NewCli(ctx context.Context, repository, username, password string, log io.Writer) (*Cli, error) {
 	if username == "" || password == "" {
 		return nil, errors.New("username or password cannot be empty")

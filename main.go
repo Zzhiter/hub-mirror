@@ -61,8 +61,8 @@ func main() {
 
 	// 推送镜像 Manifest
 	ctx := context.Background()
-	options := types.PushOptions{
-		RegistryAuth: old_cli.auth,
+	options := types.ImagePushOptions{
+		RegistryAuth: old_cli.GetAuth(),
 	}
 
 	_, err = cli.ImagePush(ctx, imageDigestReference, options)
