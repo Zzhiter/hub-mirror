@@ -69,14 +69,15 @@ func (c *Cli) Source2Target(source string) (*Output, error) {
 
 	target := source
 
-	// Check if the source contains a digest reference
-    if strings.Contains(source, "@sha256") {
-        // Extract the digest part and append it to the target
-        parts := strings.Split(source, "@")
-        if len(parts) > 1 {
-            target += "@" + parts[1]
-        }
-    } else if strings.Contains(source, "$") {
+	// // Check if the source contains a digest reference
+    // if strings.Contains(source, "@sha256") {
+    //     // Extract the digest part and append it to the target
+    //     parts := strings.Split(source, "@")
+    //     if len(parts) > 1 {
+    //         target += "@" + parts[1]
+    //     }
+    // } else 
+	if strings.Contains(source, "$") {
 		parts := strings.Split(source, "$")
 		if len(parts) > 1 {
 			source = parts[0]
@@ -115,10 +116,10 @@ func (c *Cli) PullTagPushImage(ctx context.Context, source, platform string) (*O
 		return nil, err
 	}
 
-	err = c.cli.ImageTag(ctx, output.Source, output.Target)
-	if err != nil {
-		return nil, err
-	}
+	// err = c.cli.ImageTag(ctx, output.Source, output.Target)
+	// if err != nil {
+	// 	return nil, err
+	// }
 
 	err = c.PushImage(ctx, output.Target, platform)
 	if err != nil {
