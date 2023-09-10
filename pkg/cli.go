@@ -21,8 +21,8 @@ type Cli struct {
 	log        io.Writer
 }
 
-func (Cli*) getAuth() {
-	return Cli.auth
+func (c Cli*) GetAuth() string {
+	return c.auth
 }
 
 func NewCli(ctx context.Context, repository, username, password string, log io.Writer) (*Cli, error) {
