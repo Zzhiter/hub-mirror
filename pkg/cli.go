@@ -21,7 +21,7 @@ type Cli struct {
 	log        io.Writer
 }
 
-func (c Cli*) GetAuth() string {
+func (c *Cli) GetAuth() string {
 	return c.auth
 }
 
