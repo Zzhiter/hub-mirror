@@ -5,11 +5,14 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"sync"
-	"text/template"
+	// "sync"
+	// "text/template"
+	"log"
 
 	"github.com/spf13/pflag"
 	"github.com/togettoyou/hub-mirror/pkg"
+	"github.com/docker/docker/client"
+	"github.com/docker/docker/api/types"
 )
 
 var (
