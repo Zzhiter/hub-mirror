@@ -21,11 +21,12 @@ var (
 	repository = pflag.StringP("repository", "", "", "推送仓库地址，为空默认为 hub.docker.com")
 	username   = pflag.StringP("username", "", "", "仓库用户名")
 	password   = pflag.StringP("password", "", "", "仓库密码")
-	// outputPath = pflag.StringP("outputPath", "", "output.sh", "结果输出路径")
+	outputPath = pflag.StringP("outputPath", "", "output.sh", "结果输出路径")
 )
 
 func main() {
 	pflag.Parse()
+	fmt.Println(outputPath)
 
 	fmt.Println("验证原始镜像内容")
 	var hubMirrors struct {
